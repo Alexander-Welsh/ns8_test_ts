@@ -1,0 +1,56 @@
+style(type="text/css").
+  h1 {
+    text-align: center;
+
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info {
+    border: 1px solid black;
+    width: 30%;
+    text-align:center; 
+    padding: 5px;
+  }
+
+html
+    head
+      title=title
+    body
+        h1 Welcome to the Landing Page!
+        a(href="profile") View your profile!
+        |
+        #container
+            #postinfo.info
+                h3 First post posted!
+                |
+                p Title: #{post.title}
+                p Body: #{post.body}
+            #commentinfo.info
+                h3 First comment posted!
+                |
+                p Poster: #{comment.name}
+                p Email: #{comment.email}
+                p Body: #{comment.body}
+            #pictureinfo.info
+                h3 First picture posted!
+                |
+                img(
+                  src=photo.thumbnailUrl,
+                  title=photo.title,
+                  id=photo.id
+                )
+
