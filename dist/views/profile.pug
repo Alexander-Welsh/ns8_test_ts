@@ -21,7 +21,8 @@ style(type="text/css").
 
   .info {
     border: 1px solid black;
-    width: 30%; 
+    width: 45%;
+    padding:5px; 
   }
 
 html
@@ -29,5 +30,23 @@ html
       title=title
     body
         h1 Welcome to your profile, #{user.username}!
-                 
+        |
+        #container
+            #personal.info
+                h3 Personal information
+                p Name: #{user.name}
+                p Email: #{user.email}
+                p Phone: #{user.phone}
+                p Website: #{user.website}
+                p Address:
+                  p Street: #{user.address.street}
+                  p Suite: #{user.address.suite}
+                  p City: #{user.address.city}
+                  p Zip: #{user.address.zipcode}
+
+            #company.info
+                h3 Company info
+                p Company: #{user.company.name}
+                p Catch Phrase: #{user.company.catchPhrase}
+                p Objective: #{user.company.bs}
 
