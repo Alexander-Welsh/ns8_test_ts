@@ -2,11 +2,18 @@ style(type="text/css").
   h1 {
     text-align: center;
 
+
   }
 
   a {
     text-decoration: none;
     color: black;
+    position: absolute;
+    top: 20px;
+    right:3.3%;
+    display:inline-block;
+    font-weight:bold;
+    font-size: 1.2em;
   }
 
   ul {
@@ -16,7 +23,7 @@ style(type="text/css").
   #container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .info {
@@ -25,27 +32,27 @@ style(type="text/css").
     padding:5px; 
   }
 
+
 html
     head
       title=title
     body
         h1 Welcome to your profile, #{user.username}!
-        |
+        a(href="/") Home
         #container
             #personal.info
-                h3 Personal information
+                h3 Personal information:
                 p Name: #{user.name}
                 p Email: #{user.email}
                 p Phone: #{user.phone}
                 p Website: #{user.website}
-                p Address:
-                  p Street: #{user.address.street}
-                  p Suite: #{user.address.suite}
-                  p City: #{user.address.city}
-                  p Zip: #{user.address.zipcode}
+                p Street: #{user.address.street}
+                p Suite: #{user.address.suite}
+                p City: #{user.address.city}
+                p Zip: #{user.address.zipcode}
 
             #company.info
-                h3 Company info
+                h3 Company info:
                 p Company: #{user.company.name}
                 p Catch Phrase: #{user.company.catchPhrase}
                 p Objective: #{user.company.bs}
