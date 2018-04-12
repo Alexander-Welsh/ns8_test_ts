@@ -12,7 +12,6 @@ const route_1 = require("./route");
 const node_fetch_1 = require("node-fetch");
 class IndexRoute extends route_1.BaseRoute {
     static create(router) {
-        console.log("[IndexRoute::create] Creating index route.");
         router.get("/", (req, res, next) => {
             new IndexRoute().landing(req, res, next);
         });
@@ -34,7 +33,6 @@ class IndexRoute extends route_1.BaseRoute {
     profile(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             const user = yield this.getUser();
-            console.log(user);
             this.render(req, res, "profile", { user });
         });
     }
